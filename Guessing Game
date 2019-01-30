@@ -1,0 +1,45 @@
+
+
+
+import java.util.*;
+public class GuessingGame
+{
+
+public static void main(String args[])
+{
+  Scanner keyboard = new Scanner(System.in);
+  double random = Math.random();
+  int attempts = 0;
+  int guess = 0;
+
+
+while(true) {
+    while (true) {
+        System.out.println("Enter an integer to guess between 1 and 100");
+        guess = keyboard.nextInt();
+        attempts++;
+        
+        if (attempts == 3){
+          break;
+        }
+
+        if (guess == random) {
+            System.out.println("Congratulations you won!");
+            break;
+        }
+        else if (guess != random){
+          System.out.println("Incorrect! You have guessed " + attempts + "times.");
+    }
+   }
+
+System.out.println("Wrong, again... The correct answer was " + random + ". To play again, type 1. If not, type 2.");
+    if(keyboard.nextInt() != 1){
+      break;
+    }
+}
+}
+}
+
+      
+ 
+      
