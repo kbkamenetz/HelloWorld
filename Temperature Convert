@@ -1,0 +1,74 @@
+/**
+* The following program will convert a temperature in Fahrenheit to Celsius, or viseversa.
+* 
+* @Karson Kamenetz 
+* @1.0, 2/3/2019
+*/
+import java.util.*;
+
+public class TempConverter
+{ 
+    int f;
+    int c;
+    int originalScan;
+    int goAgain;
+public void main(String args[]){
+{
+ Scanner scan = new Scanner (System.in);
+    System.out.println("To convert Celcius to Fahrenheit, press 1. To convert Fahrenheit to Celcius, press 2.");
+    originalScan = scan.nextInt();
+    if (originalScan == 1) 
+        convertCtoF();
+    else
+        convertFtoC();
+}
+}
+
+public double convertFtoC()
+{
+    f = 0;
+    c = 0;
+    Scanner scan = new Scanner (System.in);
+    System.out.println("Please enter degrees in Fahrenheit: ");
+    f = scan.nextInt();
+    c = (5/9)*(f-32);
+    System.out.println("Would you like to go again? (type 1 for F to C, 2 for C to F, 3 for no)");
+    goAgain = scan.nextInt();
+    if(goAgain == 1)
+        convertFtoC();
+    if(goAgain == 2)
+        convertCtoF();
+    else
+        end();
+    
+        return c;
+}
+
+public double convertCtoF()
+{
+    Scanner scan = new Scanner (System.in);
+    System.out.println("Please enter degrees in Celsius: ");
+    c = scan.nextInt();
+    f = c*(9/5)+32;
+    System.out.println(c + " degrees Celsius is " + f + " degrees Fahrenheit.");
+    System.out.println("Would you like to go again? (type 1 for F to C, 2 for C to F, 3 for no)");
+    goAgain = scan.nextInt();
+    if(goAgain == 1)
+        convertFtoC();
+    if(goAgain == 2)
+        convertCtoF();
+    else
+        end();
+        
+        return f;
+}
+
+public void end()
+{
+    System.out.println("Thank you for using my Temperature Converter.");
+    System.out.println("-Karson Kamenetz");
+}
+}
+
+
+
