@@ -1,0 +1,54 @@
+
+import java.util.*;
+public class Cypher
+{
+    public static void main (String[] args)
+    {
+        Scanner keyboard = new Scanner(System.in);
+        int key;
+        int i;
+        int lengthOfString;
+        char ch3,ch4;
+        String userString;
+        String str1 = "";
+        String str2 = "";
+        
+        System.out.println("Please enter the phrase you wish to encypt: ");
+        userString = keyboard.nextLine();
+        userString = userString.toLowerCase();
+        lengthOfString = userString.length();
+        System.out.println("Please enter an integer that will represent the key to be used to encrypt your text: ");
+        System.out.println("NOTE: 'key' is essentially a letter shift according to Caeser Encryption.");
+        key = keyboard.nextInt();
+        
+        
+        char ch1[] = userString.toCharArray();
+        
+        for(i = 0; i < lengthOfString; i++)
+        {
+            if(Character.isLetter(ch1[i]))
+            {
+                ch3 = (char)(((int)ch1[i]+key-97)%26+97);
+                str1 = str1 + ch3;
+            }
+            else if(ch1[i] == ' ')
+            {
+                str1 = str1 + ch1[i];
+            }
+        }
+        
+        System.out.println("According to your entered key of " + key + ", your encrypted text is: " + str1);
+        
+        
+        
+        
+        
+        
+        
+        
+   
+  
+    
+    
+    }
+}
